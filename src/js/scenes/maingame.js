@@ -8,9 +8,9 @@ import { Animated } from '../animated.js';
 export class MainGame extends Scene {
     onInitialize(engine) {
         this.score = 0;
-        this.dragonBulletCount = 1; // Initial bullet count for the dragon
+        this.dragonBulletCount = 1;
         this.timeLimit = 120; // 2 minuten in seconden
-        this.currentTime = this.timeLimit; // Huidige tijd begint bij de tijdslimiet
+        this.currentTime = this.timeLimit; 
         this.dragonUntargetable = false; // Draak is in het begin targetable
         engine.physics.gravity = new Vector(0, 0);
 
@@ -77,11 +77,11 @@ export class MainGame extends Scene {
         this.add(this.scoreLabel);
         this.add(this.timeLabel);
 
-        // Update the score label to ensure it starts at 0
+       
         this.updateScoreLabel();
         this.updateTimeLabel();
 
-        // Voorkom dat de initialize-methode opnieuw wordt aangeroepen
+      
         this.initialized = true;
 
         // Start de timer voor de tijdslimiet
@@ -90,7 +90,7 @@ export class MainGame extends Scene {
                 this.currentTime--; // Verminder de huidige tijd elke seconde
                 this.updateTimeLabel(); // Update het tijdslimiet label
                 if (this.currentTime <= 0) {
-                    this.endGame(); // Einde van de game wanneer de tijd om is
+                    this.endGame(); 
                 }
             },
             interval: 1000, // Elke seconde
