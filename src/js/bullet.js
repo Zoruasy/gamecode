@@ -1,7 +1,7 @@
 import { Actor, Vector, CollisionType } from "excalibur";
 import { Resources } from "./resources";
 import { Spaceship } from "./spaceship";
-import { MainGame } from "./scenes/maingame"; // Zorg ervoor dat MainGame correct wordt geïmporteerd
+import { MainGame } from "./scenes/maingame"; 
 
 export class Bullet extends Actor {
     constructor(x, y, direction) {
@@ -34,10 +34,10 @@ export class Bullet extends Actor {
         if (event.other instanceof Spaceship) {
             const mainGameScene = this.scene;
             if (mainGameScene instanceof MainGame) {
-                mainGameScene.increaseScore(); // Increase the score
+                mainGameScene.increaseScore(); 
             }
-            event.other.kill(); // Remove the spaceship
-            this.kill(); // Remove the bullet
+            event.other.kill(); 
+            this.kill(); 
         }
     }
 }
