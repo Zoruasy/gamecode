@@ -62,9 +62,9 @@ export class Spaceship extends Actor {
 
     checkCollision(event) {
         if (event.other instanceof Laser) {
-            const destroyed = this.health.takeDamage(10); // Reduce health by 10 when hit by a laser
+            const destroyed = this.health.takeDamage(10); 
             if (destroyed) {
-                this.destroy(); // Destroy the spaceship if its health reaches zero
+                this.destroy();
             }
         }
     }
