@@ -36,7 +36,7 @@ export class Bullet extends Actor {
             if (mainGameScene instanceof MainGame) {
                 mainGameScene.increaseScore(); 
             }
-            event.other.kill(); 
+            event.other.kill(); // Remove the spaceship
             this.kill(); // Remove the bullet
         }
     }

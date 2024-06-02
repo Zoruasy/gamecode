@@ -54,9 +54,9 @@ export class Dragon extends Actor {
         this.shooting.initialize(engine);
         this.on('preupdate', this.updateMovement.bind(this));
 
-      
+        // Listen for the 'press' event of the keyboard
         this.engine.input.keyboard.on('press', (evt) => {
-           
+            // If the space key is pressed, call the shoot method
             if (evt.key === Input.Keys.Space) {
                 this.shooting.shoot();
             }
@@ -84,3 +84,4 @@ export class Dragon extends Actor {
     }
 }
 
+// klaar

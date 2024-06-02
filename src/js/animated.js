@@ -26,16 +26,17 @@ export class Animated extends Actor {
     }
 
     onInitialize(engine) {
-       
-        this.vel = new Vector(100, 0); 
+        // Set the initial velocity of the animated sprite
+        this.vel = new Vector(100, 0); // Move to the right at 100 pixels per second
     }
 
     update(engine, delta) {
         super.update(engine, delta);
 
-        this.pos.x += this.vel.x * delta / 1000;
+        // Update the position based on velocity
+        this.pos.x += this.vel.x * delta / 1000; // Convert velocity from pixels per second to pixels per millisecond
 
-       
+        // Update animation position to match actor's position
         this.graphics.x = this.pos.x;
         this.graphics.y = this.pos.y;
     }
