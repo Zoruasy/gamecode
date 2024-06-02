@@ -7,8 +7,8 @@ import { Resources, ResourceLoader } from './resources.js';
 const options = { 
     width: 1200, // Nieuwe breedte
     height: 600, // Nieuwe hoogte
-    displayMode: DisplayMode.FullScreen, // Optioneel, indien gewenst
-    backgroundColor: Color.White // Optioneel, indien gewenst
+    displayMode: DisplayMode.FullScreen, 
+    backgroundColor: Color.White 
 };
 
 export class Game extends Engine {
