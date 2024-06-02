@@ -1,5 +1,5 @@
 import { Actor, Vector, Animation } from "excalibur";
-import { Resources } from './resources'; // Ensure the Resources import is correct
+import { Resources } from './resources';
 
 export class Animated extends Actor {
     constructor(x, y) {
@@ -19,24 +19,23 @@ export class Animated extends Actor {
                 { graphic: Resources.Fly06.toSprite(), duration: 100 },
                 { graphic: Resources.Fly07.toSprite(), duration: 100 }
             ],
-            loop: true // Make the animation loop
+            loop: true 
         });
 
         this.graphics.use(animation);
     }
 
     onInitialize(engine) {
-        // Set the initial velocity of the animated sprite
-        this.vel = new Vector(100, 0); // Move to the right at 100 pixels per second
+       
+        this.vel = new Vector(100, 0); 
     }
 
     update(engine, delta) {
         super.update(engine, delta);
 
-        // Update the position based on velocity
-        this.pos.x += this.vel.x * delta / 1000; // Convert velocity from pixels per second to pixels per millisecond
+        this.pos.x += this.vel.x * delta / 1000;
 
-        // Update animation position to match actor's position
+       
         this.graphics.x = this.pos.x;
         this.graphics.y = this.pos.y;
     }

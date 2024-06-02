@@ -17,12 +17,12 @@ class Shooting {
 
     shoot() {
         if (!this.isShooting) {
-            const direction = new Vector(-1, 0); // Shoot straight ahead
+            const direction = new Vector(-1, 0); 
             const bullet = new Bullet(this.actor.pos.x, this.actor.pos.y, direction);
             this.actor.engine.add(bullet);
             this.isShooting = true;
 
-            // Restart the timer to reset shooting
+          
             this.shootTimer.reset();
             this.actor.engine.add(this.shootTimer);
             this.shootTimer.start();
@@ -42,10 +42,10 @@ export class Dragon extends Actor {
             height: 50
         });
         const dragonSprite = Resources.Dragon.toSprite();
-        dragonSprite.scale = new Vector(0.33, 0.33); // Scale the dragon to 1/3 of its original size
+        dragonSprite.scale = new Vector(0.33, 0.33); 
         this.graphics.use(dragonSprite);
 
-        // Add Shooting component
+      
         this.shooting = new Shooting(this);
     }
 
@@ -54,9 +54,9 @@ export class Dragon extends Actor {
         this.shooting.initialize(engine);
         this.on('preupdate', this.updateMovement.bind(this));
 
-        // Listen for the 'press' event of the keyboard
+      
         this.engine.input.keyboard.on('press', (evt) => {
-            // If the space key is pressed, call the shoot method
+           
             if (evt.key === Input.Keys.Space) {
                 this.shooting.shoot();
             }
@@ -64,7 +64,7 @@ export class Dragon extends Actor {
     }
 
     updateMovement(evt) {
-        const speed = 200; // pixels per second
+        const speed = 200; 
         let moveDir = new Vector(0, 0);
 
         if (this.engine.input.keyboard.isHeld(Input.Keys.Left)) {
@@ -84,4 +84,3 @@ export class Dragon extends Actor {
     }
 }
 
-// klaar

@@ -3,7 +3,6 @@ import { Resources } from './resources';
 import { Dragon } from './dragon';
 import { Laser } from './laser';
 
-// Health component
 class Health {
     constructor(maxHealth) {
         this.maxHealth = maxHealth;
@@ -33,7 +32,7 @@ export class Spaceship extends Actor {
         this.graphics.use(spaceshipSprite);
         this.collider.set(Shape.Box(this.width * 0.5, this.height * 0.5));
 
-        // Add Health component
+        
         this.health = new Health(100);
     }
 
@@ -62,9 +61,9 @@ export class Spaceship extends Actor {
 
     checkCollision(event) {
         if (event.other instanceof Laser) {
-            const destroyed = this.health.takeDamage(10); // Reduce health by 10 when hit by a laser
+            const destroyed = this.health.takeDamage(10); 
             if (destroyed) {
-                this.destroy(); // Destroy the spaceship if its health reaches zero
+                this.destroy(); // Destroy the spaceship if health is zero
             }
         }
     }

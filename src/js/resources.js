@@ -24,7 +24,7 @@ const flyImages = [
     new ImageSource('animated/fly07.png')
 ];
 
-// Group resources in an object
+
 const Resources = {
     Dragon: dragonImage,
     Spaceship: spaceshipImage,
@@ -45,10 +45,10 @@ const Resources = {
     Fly07: flyImages[6]
 };
 
-// Create a loader with all the resources
+
 const ResourceLoader = new Loader(Object.values(Resources));
 
-// Load all queued resources
+
 ResourceLoader.load().then(() => {
     console.log('All resources loaded successfully!');
 }).catch((error) => {
